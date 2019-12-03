@@ -1,1 +1,1 @@
-java -jar .\build\libs\StepicWeb-1.0.jar
+java -jar .\build\libs\server.jar
