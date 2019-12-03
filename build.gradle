@@ -13,5 +13,15 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    implementation 'org.eclipse.jetty:jetty-server:9.4.24.v20191120'
+    compile 'org.eclipse.jetty:jetty-server:9.4.24.v20191120'
+    compile 'org.eclipse.jetty:jetty-webapp:9.4.24.v20191120'
+    compile 'org.freemarker:freemarker:2.3.29'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'main.Main'
+        )
+    }
 }
