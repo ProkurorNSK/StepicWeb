@@ -19,17 +19,6 @@ dependencies {
     compile  'org.freemarker:freemarker:2.3.29'
 }
 
-jar {
-    manifest {
-        attributes(
-                'Main-Class': 'main.Main'
-        )
-    }
-    archiveFileName = "Server.jar"
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-
-}
-
 task fatJar(type: Jar) {
     manifest {
         attributes(
