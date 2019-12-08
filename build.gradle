@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'ru.prokurornsk'
-version '1.0'
+version '2.1'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -17,6 +17,7 @@ dependencies {
     compile 'org.eclipse.jetty:jetty-server:9.4.24.v20191120'
     compile  'org.eclipse.jetty:jetty-webapp:9.4.24.v20191120'
     compile  'org.freemarker:freemarker:2.3.29'
+    compile  'com.google.code.gson:gson:2.8.6'
 }
 
 task fatJar(type: Jar) {
