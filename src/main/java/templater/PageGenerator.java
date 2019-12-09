@@ -14,7 +14,7 @@ import java.util.Map;
  * @author ProkurorNSK
  */
 public class PageGenerator {
-    private static final String HTML_DIR = "build\\resources\\main";
+    private static final String HTML_DIR = "templates";
 
     private static PageGenerator pageGenerator;
     private final Configuration cfg;

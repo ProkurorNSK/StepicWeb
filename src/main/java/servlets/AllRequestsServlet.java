@@ -43,7 +43,7 @@ public class AllRequestsServlet extends HttpServlet {
         Map<String, Object> pageVariables = new HashMap<>();
         pageVariables.put("method", request.getMethod());
         pageVariables.put("URL", request.getRequestURL().toString());
-        pageVariables.put("pathInfo", request.getPathInfo());
+        pageVariables.put("pathInfo", (request.getPathInfo() == null ? "" : request.getPathInfo()));
         pageVariables.put("sessionId", request.getSession().getId());
         pageVariables.put("parameters", request.getParameterMap().toString());
         return pageVariables;
