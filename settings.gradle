@@ -1,2 +1,4 @@
 rootProject.name = 'StepicWeb'
+include 'jdbc'
+include 'Servlet'
 
