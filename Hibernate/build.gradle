@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.prokurornsk'
+version '3.1'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'org.hibernate:hibernate-core:5.4.13.Final'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:2.5.2'
+}
