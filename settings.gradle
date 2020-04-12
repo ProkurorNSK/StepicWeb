@@ -2,4 +2,5 @@ rootProject.name = 'StepicWeb'
 include 'jdbc'
 include 'Servlet'
 include 'Hibernate'
+include 'HW3'
 

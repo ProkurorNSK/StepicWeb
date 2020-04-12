@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.prokurornsk'
+version '3.2'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'org.hibernate:hibernate-core:5.4.13.Final'
+    compile 'org.mariadb.jdbc:mariadb-java-client:2.5.2'
+    compile 'org.eclipse.jetty:jetty-server:9.4.24.v20191120'
+    compile 'org.eclipse.jetty:jetty-webapp:9.4.24.v20191120'
+    compile 'org.slf4j:slf4j-log4j12:1.7.30'
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes(
+                'Main-Class': 'main.Main'
+        )
+    }
+    archiveFileName = "server.jar"
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
