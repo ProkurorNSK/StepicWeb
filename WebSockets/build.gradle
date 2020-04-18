@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'ru.prokurornsk'
+version '4.1'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClassName = 'main.Main'
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'org.eclipse.jetty:jetty-server:9.4.24.v20191120'
+    compile  'org.eclipse.jetty:jetty-webapp:9.4.24.v20191120'
+    compile  'org.eclipse.jetty.websocket:websocket-server:9.4.24.v20191120'
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes(
+                'Main-Class': 'main.Main'
+        )
+    }
+    archiveFileName = "server.jar"
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
