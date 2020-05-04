@@ -1,1 +1,1 @@
-java -jar .\build\libs\server.jar 8080
+java -jar .\build\libs\server.jar
