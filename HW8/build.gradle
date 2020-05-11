@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.prokurornsk'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes(
+                'Main-Class': 'Main'
+        )
+    }
+    archiveFileName = "Server.jar"
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}

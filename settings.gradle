@@ -7,4 +7,5 @@ include 'WebSockets'
 include 'Tests'
 include 'NIO'
 include 'Rase'
+include 'HW8'
 
